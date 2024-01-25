@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background: #000;
+      color: #00ff00; /* Matrix green */
+    }
+    #header {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #ff0000; /* Red */
+    }
+    #quote {
+      text-align: center;
+      margin-top: 30vh;
+      font-size: 24px;
+    }
+    #quote span {
+      display: inline-block;
+      transition: color 0.5s;
+    }
+    #space-image {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      border: 5px solid #8A2BE2; /* Blue Violet */
+    }
+    #video {
+      width: 100%;
+      height: 50vh;
+    }
+    #motivation-quote {
+      text-align: center;
+      margin-top: 30vh;
+      font-size: 24px;
+      color: #ff1493; /* Deep Pink */
+    }
+    #cool-photo {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      border: 5px solid #00bfff; /* Deep Sky Blue */
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const quoteSpan = document.querySelectorAll("#quote span");
+      quoteSpan.forEach((span, index) => {
+        setTimeout(() => {
+          span.style.color = getRandomColor();
+        }, index * 300);
+      });
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    });
+  </script>
+  <title>Shailesh's Website</title>
+</head>
+<body>
+  <div id="header">Welcome to the website of Shailesh</div>
+  <div id="quote">
+    <span>Life</span>
+    <span>is</span>
+    <span>a</span>
+    <span>game</span>
+    <span>so</span>
+    <span>life</span>
+    <span>in</span>
+    <span>red</span>
+    <span>is</span>
+    <span>in</span>
+    <span>black</span>
+  </div>
+  <img id="space-image" src="100.jpg" alt="Space">
+  <video id="video" controls>
+    <source src="200.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="motivation-quote">Studying is the key to success</div>
+  <img id="cool-photo" src="300.jpg" alt="Cool Photo">
+</body>
+</html>
